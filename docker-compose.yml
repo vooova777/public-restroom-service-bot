@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  bot:
+    build: .
+    container_name: public-restroom-service-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./user_tokens.db:/app/user_tokens.db
